@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		  http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+           version="3.1">
+
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.filter.EncodingFilter</filter-class><!--全路径 从根包开始一直到类名-->
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern> <!--*即为过滤所有-->
+    </filter-mapping>
+
+
+
+
+    <servlet>
+        <servlet-name>Searchallnews</servlet-name>
+        <servlet-class>com.servlet.Searchallnews</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>com.servlet.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateServlet</servlet-name>
+        <servlet-class>com.servlet.UpdateServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchNewsByCategory</servlet-name>
+        <servlet-class>com.servlet.SearchNewsByCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchAllEssays</servlet-name>
+        <servlet-class>com.servlet.SearchAllEssays</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchEssayByCategory</servlet-name>
+        <servlet-class>com.servlet.SearchEssayByCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchAllContent</servlet-name>
+        <servlet-class>com.servlet.SearchAllContent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchContentsByCategory</servlet-name>
+        <servlet-class>com.servlet.SearchContentsByCategory</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>KeywordServlet</servlet-name>
+        <servlet-class>com.servlet.KeywordServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>WebServlet</servlet-name>
+        <servlet-class>com.servlet.WebServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchAllKeywordsEssay</servlet-name>
+        <servlet-class>com.servlet.SearchAllKeywordsEssay</servlet-class>
+    </servlet>
+
+
+
+
+    <servlet-mapping>
+        <servlet-name>Searchallnews</servlet-name>
+        <url-pattern>/Searchallnews</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateServlet</servlet-name>
+        <url-pattern>/UpdateServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchNewsByCategory</servlet-name>
+        <url-pattern>/SearchNewsByCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchAllEssays</servlet-name>
+        <url-pattern>/SearchAllEssays</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchEssayByCategory</servlet-name>
+        <url-pattern>/SearchEssayByCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchAllContent</servlet-name>
+        <url-pattern>/SearchAllContent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchContentsByCategory</servlet-name>
+        <url-pattern>/SearchContentsByCategory</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>KeywordServlet</servlet-name>
+        <url-pattern>/KeywordServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WebServlet</servlet-name>
+        <url-pattern>/WebServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchAllKeywordsEssay</servlet-name>
+        <url-pattern>/SearchAllKeywordsEssay</url-pattern>
+    </servlet-mapping>
+
+
+    <welcome-file-list><!--默认首页地址-->
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
+
+
+
+
+
