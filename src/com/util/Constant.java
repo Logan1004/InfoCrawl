@@ -24,6 +24,18 @@ public class Constant {
     public static int TotalContents=0;
     public static String PreciousCategory2="";
 
+    public static int ContentFlag = 1;
+    public static int ContentCategoryFlag = 0;
+    public static int finalContentflag=1;
+
+    public static int NewsFlag = 1;
+    public static int NewsCategoryFlag = 0;
+    public static int finalNewsflag=1;
+
+    public static int EssayFlag = 1;
+    public static int EssayCategoryFlag = 0;
+    public static int finalEssayflag=1;
+
 
     public static List<Keyword> keywords = new ArrayList<>();
 

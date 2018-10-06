@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchAllContent extends HttpServlet {
@@ -26,12 +27,20 @@ public class SearchAllContent extends HttpServlet {
             if (request.getParameter("page") != null)
                 Constant.ContentsCurrentPage = Integer.parseInt(request.getParameter("page"));
         }else{
+            Constant.ContentFlag=0;
             Constant.ContentsCurrentPage=1; Constant.ContentsTotalpage=0; Constant.TotalContents=0;
             Constant.PreciousCategory2="";
         }
+        List<Content> contents = new ArrayList<>();contentDao.getContentAll();
+        if (request.getParameter("Category")!=null){
+            contents = contentDao.getContentByCategory(request.getParameter("Category"));
+        }else
+        {
+            contents = contentDao.getContentAll();
+        }
 
 
-        List<Content> contents = contentDao.getContentAll();
+
         //System.out.println(contents.get(1).getTitle());
         contentDao.getNumber();
 

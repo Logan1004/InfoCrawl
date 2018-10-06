@@ -21,6 +21,8 @@ public class SearchContentsByCategory extends HttpServlet {
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        if (Constant.finalContentflag==1) Constant.ContentCategoryFlag=1;
         String category = request.getParameter("Category");
         ContentDao contentDao = new ContentDaoImpl();
 
@@ -29,10 +31,12 @@ public class SearchContentsByCategory extends HttpServlet {
             if (request.getParameter("page") != null)
                 Constant.ContentsCurrentPage = Integer.parseInt(request.getParameter("page"));
         }else{
+            Constant.ContentCategoryFlag=1;
             Constant.ContentsCurrentPage=1; Constant.ContentsTotalpage=0; Constant.TotalContents=0;
             Constant.PreciousCategory2=category;
         }
         if (category.equals("")) {
+            Constant.ContentFlag=0;
             contents = contentDao.getContentAll();
         } else {
             contents = contentDao.getContentByCategory(category);

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.util.Constant" %><%--
   Created by IntelliJ IDEA.
   User: logan
   Date: 2018/9/29
@@ -98,6 +98,9 @@
 
 
 <%
+    Constant.ContentFlag=1;
+    Constant.NewsFlag=1;
+    Constant.EssayFlag=1;
     String info = (String)request.getAttribute("info");
     if (info==null);
     else

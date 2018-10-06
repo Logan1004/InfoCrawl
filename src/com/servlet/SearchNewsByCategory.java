@@ -22,16 +22,19 @@ public class SearchNewsByCategory extends HttpServlet {
             throws ServletException, IOException {
         String category = request.getParameter("Category");
         CompanyDao companyDao = new CompanyDaoImpl();
+        if (Constant.finalNewsflag==1) Constant.NewsCategoryFlag=1;
 
         if (Constant.PreciousCategory1.equals(category)) {
             if (request.getParameter("page") != null)
                 Constant.NewsCurrentPage = Integer.parseInt(request.getParameter("page"));
         }else{
+            Constant.NewsCategoryFlag=1;
             Constant.NewsCurrentPage=1; Constant.NewsTotalpage=0; Constant.TotalNews=0;
             Constant.PreciousCategory1=category;
         }
         List<Company> companies = new ArrayList<>();
         if (category.equals("")) {
+            Constant.NewsFlag=0;
             companies = companyDao.getCompanyAll();
         } else {
             companies = companyDao.getCompanyByCategory(category);

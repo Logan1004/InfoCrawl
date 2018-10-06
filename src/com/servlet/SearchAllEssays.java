@@ -25,6 +25,7 @@ public class SearchAllEssays extends HttpServlet {
             if (request.getParameter("page") != null)
                 Constant.EssayCurrentPage = Integer.parseInt(request.getParameter("page"));
         }else{
+             Constant.EssayFlag=0;
              Constant.EssayCurrentPage=1; Constant.EssayTotalpage=0; Constant.TotalEssays=0;
              Constant.PreciousCategory="";
         }

@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
-<body>
+<body onload="load()">
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
@@ -287,6 +287,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/bootstrap.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
+
+
+<script type="text/javascript">
+
+    function load(){
+
+
+
+        <%
+
+        //System.out.println("cd"+Constant.ContentFlag);
+        //System.out.println("cd"+Constant.ContentCategoryFlag);
+            if (Constant.EssayCategoryFlag==0 && Constant.EssayFlag>=0) {
+                System.out.println("cf"+Constant.EssayFlag);
+                Constant.EssayFlag=-1;
+                Constant.ContentFlag=0;
+                Constant.NewsFlag=0;
+
+            //System.out.println(Constant.flag);
+            //if (name.equals("")) curUrl = "SearchAllContent";
+            //            else curUrl = "SearchContentsByCategory?Category="+name+"&page=1";
+
+            //System.out.println(curUrl);
+
+
+            %>
+        //window.location= "SearchContentsByCategory?Category=医疗器械";
+        //window.location.reload();
+        window.location = "SearchAllEssays";
+
+        <%}
+        else
+        if (Constant.EssayCategoryFlag>0 && Constant.EssayFlag<=0){
+                Constant.EssayCategoryFlag--;
+                Constant.finalEssayflag=0;
+                //Constant.NewsFlag=1;
+            System.out.println("cs"+Constant.EssayCategoryFlag);
+            System.out.println(name);
+        %>
+
+        var url = window.location.href;
+        window.location= url;
+        //window.location.href = window.location.href;
+        window.location.reload();
+
+
+
+        //<%}%>
+
+
+    }
+</script>
+
 
 </body>
 </html>

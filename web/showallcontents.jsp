@@ -1,9 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.util.Constant" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE html>
@@ -30,11 +30,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
-<body>
+<body onload="load()">
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-
 
 <header class="site-header">
     <!--<div class="top-header">
@@ -133,6 +132,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <div class="panel-group" id="accordion">
 
                     <c:forEach var="U" items="${userAll}">
+
                         <% if (index == 0) {
                             index++;
                         %>
@@ -181,7 +181,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <%}
                         %>
                     </c:forEach>
-                    
+
                     <%
                         String url = "";
                         if (name.equals("")) url = "SearchAllContent?page=";
@@ -281,6 +281,58 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
+<script type="text/javascript">
+
+    function load(){
+
+
+
+        <%
+
+        System.out.println("cd"+Constant.ContentFlag);
+        System.out.println("cd"+Constant.ContentCategoryFlag);
+            if (Constant.ContentCategoryFlag==0 && Constant.ContentFlag>=0) {
+                System.out.println("cf"+Constant.ContentFlag);
+                Constant.ContentFlag=-1;
+                Constant.NewsFlag=0;
+                Constant.EssayFlag=0;
+
+            //System.out.println(Constant.flag);
+            //if (name.equals("")) curUrl = "SearchAllContent";
+            //            else curUrl = "SearchContentsByCategory?Category="+name+"&page=1";
+
+            //System.out.println(curUrl);
+
+
+            %>
+        //window.location= "SearchContentsByCategory?Category=医疗器械";
+        //window.location.reload();
+        window.location = "SearchAllContent";
+
+        <%}
+        else
+        if (Constant.ContentCategoryFlag>0 && Constant.ContentFlag<=0){
+                Constant.ContentCategoryFlag--;
+                Constant.finalContentflag=0;
+                //Constant.ContentFlag=1;
+            System.out.println("cs"+Constant.ContentCategoryFlag);
+            System.out.println(name);
+        %>
+
+            var url = window.location.href;
+            window.location= url;
+            //window.location.href = window.location.href;
+            window.location.reload();
+
+
+
+        //<%}%>
+
+
+    }
+</script>
+
 
 </body>
 </html>
+

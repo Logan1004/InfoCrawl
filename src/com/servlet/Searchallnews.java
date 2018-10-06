@@ -25,6 +25,7 @@ public class Searchallnews extends HttpServlet {
 			if (request.getParameter("page") != null)
 				Constant.NewsCurrentPage = Integer.parseInt(request.getParameter("page"));
 		}else{
+			Constant.NewsFlag=0;
 			Constant.NewsCurrentPage=1; Constant.NewsTotalpage=0; Constant.TotalNews=0;
 			Constant.PreciousCategory1="";
 		}

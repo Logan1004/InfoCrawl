@@ -4,6 +4,7 @@ import com.dao.CompanyDao;
 import com.dao.CompanyDaoImpl;
 import com.dao.KeywordDao;
 import com.dao.KeywordDaoImpl;
+import com.util.Constant;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,6 @@ public class KeywordServlet extends HttpServlet{
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
 
         String keyword = request.getParameter("name");
         KeywordDao keywordDao = new KeywordDaoImpl();
