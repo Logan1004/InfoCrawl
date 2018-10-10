@@ -78,8 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <li><a href="Searchallnews">新闻</a></li>
               <li><a href="SearchAllEssays">论文</a></li>
               <li><a href="SearchAllContent">专利</a></li>
-              <li><a href="addkey.jsp">添加关键词</a></li>
-              <li><a href="addnews.jsp">添加新闻源</a></li>
+              <li><a href="addkey.jsp">添加信息</a></li>
             </ul>
           </div> <!-- /.list-menu -->
         </div> <!-- /.col-md-6 -->
@@ -91,103 +90,58 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
+
 <div class="content-section">
   <div class="container">
     <div class="row">
       <div class="col-md-12 section-title">
-        <h2>News</h2>
+        <h2>使用须知</h2>
       </div> <!-- /.section -->
     </div> <!-- /.row -->
     <div class="row">
-      <div class="col-md-1 col-sm-6">
-        <div class="product-item">
-          <h5><a href="#">医疗器械</a></h5>
-        </div> <!-- /.product-item -->
-      </div> <!-- /.col-md-3 -->
-      <div class="col-md-1 col-sm-6">
-        <div class="product-item">
-          <h5><a href="#">人工智能</a></h5>
-        </div> <!-- /.product-item -->
-      </div> <!-- /.col-md-3 -->
-      <div class="col-md-1 col-sm-6">
-        <div class="product-item">
-          <h5><a href="#">区块链</a></h5>
-        </div> <!-- /.product-item -->
-      </div> <!-- /.col-md-3 -->
-      <div class="col-md-1 col-sm-6">
-        <div class="product-item">
-          <h5><a href="#">新兴产业</a></h5>
-        </div> <!-- /.product-item -->
-      </div> <!-- /.col-md-3 -->
+      <p style="font-size:15px">
+        &nbsp;&nbsp;&nbsp;&nbsp;论文，专利等相关信息，通过导航栏可以跳转到相应的文章列表。添加关键词以及添加新闻网址是方便用户自己调整喜好
+      </p>
+      <p style="font-size:15px">
+        &nbsp;&nbsp;&nbsp;&nbsp;注意：1.添加之后不会立即生效，需要等到爬虫再次爬取才会更新文章列表
+        <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.删除关键词需要完整地输入关键词，否则删除不成功
+      </p>
     </div> <!-- /.row -->
   </div> <!-- /.container -->
 </div> <!-- /.content-section -->
-<div class="content-section">
-  <div class="container">
-    <div class="col-md-6">
-      <!--文章列表放置位置-->
-    </div> <!-- /.col-md-2 -->
-  </div> <!-- /.container -->
-</div>
-<div class="main-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="footer-widget">
-          <h3 class="widget-title">About Us</h3>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, debitis recusandae.
-          <ul class="follow-us">
-            <li><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-          </ul> <!-- /.follow-us -->
-        </div> <!-- /.footer-widget -->
-      </div> <!-- /.col-md-3 -->
-      <div class="col-md-3">
-        <div class="footer-widget">
-          <h3 class="widget-title">Why Choose Us?</h3>
-          Kool Store is free responsive eCommerce template provided by templatemo website. You can use this layout for any website.
-          <br><br>Tempore cum mollitia eveniet laboriosam corporis voluptas earum voluptate. Lorem ipsum dolor sit amet.
-          <br><br>Credit goes to <a rel="nofollow" href="#">Unsplash</a> for all images.
-        </div> <!-- /.footer-widget -->
-      </div> <!-- /.col-md-3 -->
-      <div class="col-md-2">
-        <div class="footer-widget">
-          <h3 class="widget-title">Useful Links</h3>
-          <ul>
-            <li><a href="#">Our Shop</a></li>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">Gift Cards</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </div> <!-- /.footer-widget -->
-      </div> <!-- /.col-md-2 -->
-      <div class="col-md-4">
-        <div class="footer-widget">
-          <h3 class="widget-title">Our Newsletter</h3>
-          <div class="newsletter">
-            <form action="#" method="get">
-              <p>Sign up for our regular updates to know when new products are released.</p>
-              <input type="text" title="Email" name="email" placeholder="Your Email Here">
-              <input type="submit" class="s-button" value="Submit" name="Submit">
-            </form>
-          </div> <!-- /.newsletter -->
-        </div> <!-- /.footer-widget -->
-      </div> <!-- /.col-md-4 -->
-    </div> <!-- /.row -->
-  </div> <!-- /.container -->
-</div> <!-- /.main-footer -->
-<div class="bottom-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <span>Copyright &copy; 2084 More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span>
+<footer class="site-footer">
+  <div class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="footer-widget">
+            <h3 class="widget-title">联系我们</h3>
 
-      </div> <!-- /.col-md-12 -->
-    </div> <!-- /.row -->
-  </div> <!-- /.container -->
-</div> <!-- /.bottom-footer -->
+            地址：中国 上海曹安公路4800号同济大学软件学院
+            <br>邮编：201804
+            <br>联系电话：86-21-69589585,69589332(FAX)
 
+          </div> <!-- /.footer-widget -->
+        </div> <!-- /.col-md-3 -->
+        <div class="col-md-3">
+          <div class="footer-widget">
+            <h3 class="widget-title">邮箱地址</h3>
+            1585084146@qq.com
+            <br>1264160868@qq.com
+            <br>1228974364@qq.com
+
+          </div> <!-- /.footer-widget -->
+        </div> <!-- /.col-md-3 -->
+        <div class="col-md-4">
+          <div class="footer-widget">
+            <img src="images/tongji.png" style="height: 150px">
+          </div> <!-- /.footer-widget -->
+        </div> <!-- /.col-md-3 -->
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+  </div> <!-- /.main-footer -->
+
+</footer> <!-- /.site-footer -->
 
 <script src="js/vendor/jquery-1.10.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>

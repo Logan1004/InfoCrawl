@@ -11,6 +11,11 @@
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<%
+    Constant.ContentFlag=1;
+    Constant.NewsFlag=1;
+    Constant.EssayFlag=1;
+%>
 <head>
     <!--
     Kool Store Template
@@ -30,7 +35,7 @@
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/templatemo-misc.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
-
+    <meta name="viewport" content="width=620px,initial-scale=1,target-densitydpi=device-dpi,minimum-scale=1,maximum-scale=1,user-scalable=1" />
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
@@ -137,12 +142,7 @@
                             <input name="url" type="text" id="url" placeholder="网址url">
                         </p>
                         <p>
-                            <select name="category"  style="font-size: 80px!important; width: 100%; height: 200%" >
-                                <option>医疗器械</option>
-                                <option>人工智能</option>
-                                <option>区块链</option>
-                                <option>新兴产业</option>
-                            </select>
+                            <input name="category" type="text" id="category" placeholder="请输入完整关键词">
                         </p>
                         <input type="submit" class="mainBtn" id="submit" value="提交">
                     </form>
@@ -153,68 +153,38 @@
 </div> <!-- /.content-section -->
 
 <footer class="site-footer">
-
     <div class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">About Us</h3>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, debitis recusandae.
-                        <ul class="follow-us">
-                            <li><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                        </ul> <!-- /.follow-us -->
-                    </div> <!-- /.footer-widget -->
-                </div> <!-- /.col-md-3 -->
-                <div class="col-md-3">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">Why Choose Us?</h3>
-                        Kool Store is free responsive eCommerce template provided by templatemo website. You can use this layout for any website.
-                        <br><br>Tempore cum mollitia eveniet laboriosam corporis voluptas earum voluptate. Lorem ipsum dolor sit amet.
-                        <br><br>Credit goes to <a rel="nofollow" href="#">Unsplash</a> for all images.
-                    </div> <!-- /.footer-widget -->
-                </div> <!-- /.col-md-3 -->
-                <div class="col-md-2">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">Useful Links</h3>
-                        <ul>
-                            <li><a href="#">Our Shop</a></li>
-                            <li><a href="#">Partners</a></li>
-                            <li><a href="#">Gift Cards</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Help</a></li>
-                        </ul>
-                    </div> <!-- /.footer-widget -->
-                </div> <!-- /.col-md-2 -->
                 <div class="col-md-4">
                     <div class="footer-widget">
-                        <h3 class="widget-title">Our Newsletter</h3>
-                        <div class="newsletter">
-                            <form action="#" method="get">
-                                <p>Sign up for our regular updates to know when new products are released.</p>
-                                <input type="text" title="Email" name="email" placeholder="Your Email Here">
-                                <input type="submit" class="s-button" value="Submit" name="Submit">
-                            </form>
-                        </div> <!-- /.newsletter -->
+                        <h3 class="widget-title">联系我们</h3>
+
+                        地址：中国 上海曹安公路4800号同济大学软件学院
+                        <br>邮编：201804
+                        <br>联系电话：86-21-69589585,69589332(FAX)
+
                     </div> <!-- /.footer-widget -->
-                </div> <!-- /.col-md-4 -->
+                </div> <!-- /.col-md-3 -->
+                <div class="col-md-3">
+                    <div class="footer-widget">
+                        <h3 class="widget-title">邮箱地址</h3>
+                        1585084146@qq.com
+                        <br>1264160868@qq.com
+                        <br>1228974364@qq.com
+
+                    </div> <!-- /.footer-widget -->
+                </div> <!-- /.col-md-3 -->
+                <div class="col-md-4">
+                    <div class="footer-widget">
+                        <img src="images/tongji.png" style="height: 150px">
+                    </div> <!-- /.footer-widget -->
+                </div> <!-- /.col-md-3 -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
     </div> <!-- /.main-footer -->
-    <div class="bottom-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <span>Copyright &copy; 2084 More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, expedita soluta mollitia accusamus ut architecto maiores cum fugiat. Pariatur ipsum officiis fuga deleniti alias quia nostrum veritatis enim doloremque eligendi?</p>
-                </div> <!-- /.col-md-12 -->
-            </div> <!-- /.row -->
-        </div> <!-- /.container -->
-    </div> <!-- /.bottom-footer -->
+
 </footer> <!-- /.site-footer -->
-
-
 <script src="js/vendor/jquery-1.10.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 <script src="js/jquery.easing-1.3.js"></script>

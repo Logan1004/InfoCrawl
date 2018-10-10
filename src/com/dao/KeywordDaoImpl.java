@@ -57,4 +57,15 @@ public class KeywordDaoImpl implements KeywordDao{
         return null;
 
     }
+    public Boolean DeleteKeyword(String keyWord) {
+        boolean flag = false;
+        String sql = "delete from Keyword where Category = '"+keyWord+"'";
+        DBconn.init();
+        int rs = DBconn.addUpdDel(sql);
+        if(rs>0){
+            flag = true;
+        }
+        DBconn.closeConn();
+        return flag;
+    }
 }

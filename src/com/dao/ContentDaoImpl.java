@@ -28,6 +28,7 @@ public class ContentDaoImpl implements ContentDao{
                 content.setAnnounceTime(rs.getString("AnnounceTime"));
                 content.setOwner(rs.getString("Owner"));
                 content.setDetail(rs.getString("Content"));
+                content.setUrl(rs.getString("Url"));
                 list.add(content);
             }
             DBconn.closeConn();
@@ -57,6 +58,7 @@ public class ContentDaoImpl implements ContentDao{
                 content.setAnnounceTime(rs.getString("AnnounceTime"));
                 content.setOwner(rs.getString("Owner"));
                 content.setDetail(rs.getString("Content"));
+                content.setUrl(rs.getString("Url"));
                 list.add(content);
             }
             DBconn.closeConn();

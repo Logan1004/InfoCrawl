@@ -25,6 +25,7 @@ public class SearchEssayByCategory extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String category = request.getParameter("Category");
+        System.out.println("das"+category);
         if (Constant.finalEssayflag==1) Constant.EssayCategoryFlag=1;
         EssayDao essayDao = new EssayDaoImpl();
         List<Essay> essays = new ArrayList<>();
@@ -40,9 +41,9 @@ public class SearchEssayByCategory extends HttpServlet {
             Constant.EssayFlag=0;
             essays = essayDao.getEssayAll();
         } else {
+            essayDao.getCategoryNumber(category);
             essays = essayDao.getEssayByCategory(category);
         }
-        essayDao.getCategoryNumber(category);
         request.setAttribute("userAll", essays);
         request.getRequestDispatcher("/showallessays.jsp").forward(request, response);
     }

@@ -95,9 +95,11 @@ public class EssayDaoImpl implements EssayDao {
             DBconn.init();
             ResultSet rs2 = DBconn.selectSql("select count(*) from EssayInfo where Category = '"+Category+"'");
             if (rs2.next()) {
+                System.out.println("xxx");
                 Constant.TotalEssays = rs2.getInt(1);
                 Constant.EssayTotalpage = rs2.getInt(1) / 20+1;
             }
+            System.out.println("xxx"+Constant.TotalEssays);
             DBconn.closeConn();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -80,8 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <li><a href="Searchallnews">新闻</a></li>
                             <li><a href="SearchAllEssays">论文</a></li>
                             <li><a href="SearchAllContent">专利</a></li>
-                            <li><a href="addkey.jsp">添加关键词</a></li>
-                            <li><a href="addnews.jsp">添加新闻源</a></li>
+                            <li><a href="addkey.jsp">添加信息</a></li>
                         </ul>
                     </div> <!-- /.list-menu -->
                 </div> <!-- /.col-md-6 -->
@@ -111,7 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             %>
             <div class="col-md-1 col-sm-6">
                 <div class="product-item">
-                    <h5><a href="SearchNewsByCategory?Category=<%=Constant.keywords.get(i).getKeyword()%>"><%=Constant.keywords.get(i).getKeyword()%></a></h5>
+                    <h5><a href="SearchNewsByCategory?Category=<%=Constant.keywords.get(i).getKeyword()%>" style="font-size: 16px"><%=Constant.keywords.get(i).getKeyword()%></a></h5>
                 </div> <!-- /.product-item -->
             </div> <!-- /.col-md-3 -->
 
@@ -136,8 +135,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 %>
 
                 <p>
-                    <a href="${U.url}" target="_blank"><%=index%>.${U.content}</a>
-                    <em><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${U.curtime}</small></em>
+                    <a href="${U.url}" target="_blank" style="font-size: 15px"><%=index%>.${U.content}</a>
+                    <em><small style="font-size: 12px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${U.curtime}</small></em>
                 </p>
 
             </c:forEach>
@@ -152,15 +151,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     if (request.getParameter("page")!=null) Constant.NewsCurrentPage = Integer.parseInt(request.getParameter("page"));
                 %>
                 <p>
-                    <a <%if (Constant.NewsCurrentPage>1){%> href=<%=url+"1"%><%}%>>首页</a>
+                    <a <%if (Constant.NewsCurrentPage>1){%> href=<%=url+"1"%><%}%> style="font-size: 18px">首页</a>
                     <!-- 上页按钮，跳转到上一页 -->
-                    <a <%if (Constant.NewsCurrentPage>1){%> href=<%=url+(Constant.NewsCurrentPage-1)%><%}%>>上页</a>
+                    <a <%if (Constant.NewsCurrentPage>1){%> href=<%=url+(Constant.NewsCurrentPage-1)%><%}%> style="font-size: 18px">上页</a>
 
                     <!-- 下页按钮，跳转到下一页 -->
-                    <a <%if (Constant.NewsCurrentPage<Constant.NewsTotalpage){%> href=<%=url+(Constant.NewsCurrentPage+1)%><%}%>>下页</a>
+                    <a <%if (Constant.NewsCurrentPage<Constant.NewsTotalpage){%> href=<%=url+(Constant.NewsCurrentPage+1)%><%}%> style="font-size: 18px">下页</a>
 
                     <!-- 末页按钮，跳转到最后一页 -->
-                    <a <%if (Constant.NewsCurrentPage<Constant.NewsTotalpage){%> href=<%=url+Constant.NewsTotalpage%><%}%>>末页</a>
+                    <a <%if (Constant.NewsCurrentPage<Constant.NewsTotalpage){%> href=<%=url+Constant.NewsTotalpage%><%}%> style="font-size: 18px">末页</a>
 
                 </p>
                 共 <i class="blue">${Constant.TotalNews}</i>
@@ -175,65 +174,40 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div> <!-- /.col-md-2 -->
     </div> <!-- /.container -->
 </div>
-<div class="main-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="footer-widget">
-                    <h3 class="widget-title">About Us</h3>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, debitis recusandae.
-                    <ul class="follow-us">
-                        <li><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                    </ul> <!-- /.follow-us -->
-                </div> <!-- /.footer-widget -->
-            </div> <!-- /.col-md-3 -->
-            <div class="col-md-3">
-                <div class="footer-widget">
-                    <h3 class="widget-title">Why Choose Us?</h3>
-                    Kool Store is free responsive eCommerce template provided by templatemo website. You can use this layout for any website.
-                    <br><br>Tempore cum mollitia eveniet laboriosam corporis voluptas earum voluptate. Lorem ipsum dolor sit amet.
-                    <br><br>Credit goes to <a rel="nofollow" href="#">Unsplash</a> for all images.
-                </div> <!-- /.footer-widget -->
-            </div> <!-- /.col-md-3 -->
-            <div class="col-md-2">
-                <div class="footer-widget">
-                    <h3 class="widget-title">Useful Links</h3>
-                    <ul>
-                        <li><a href="#">Our Shop</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Gift Cards</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Help</a></li>
-                    </ul>
-                </div> <!-- /.footer-widget -->
-            </div> <!-- /.col-md-2 -->
-            <div class="col-md-4">
-                <div class="footer-widget">
-                    <h3 class="widget-title">Our Newsletter</h3>
-                    <div class="newsletter">
-                        <form action="#" method="get">
-                            <p>Sign up for our regular updates to know when new products are released.</p>
-                            <input type="text" title="Email" name="email" placeholder="Your Email Here">
-                            <input type="submit" class="s-button" value="Submit" name="Submit">
-                        </form>
-                    </div> <!-- /.newsletter -->
-                </div> <!-- /.footer-widget -->
-            </div> <!-- /.col-md-4 -->
-        </div> <!-- /.row -->
-    </div> <!-- /.container -->
-</div> <!-- /.main-footer -->
-<div class="bottom-footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <span>Copyright &copy; 2084 More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></span>
 
-            </div> <!-- /.col-md-12 -->
-        </div> <!-- /.row -->
-    </div> <!-- /.container -->
-</div> <!-- /.bottom-footer -->
+<footer class="site-footer">
+    <div class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-widget">
+                        <h3 class="widget-title">联系我们</h3>
 
+                        地址：中国 上海曹安公路4800号同济大学软件学院
+                        <br>邮编：201804
+                        <br>联系电话：86-21-69589585,69589332(FAX)
+
+                    </div> <!-- /.footer-widget -->
+                </div> <!-- /.col-md-3 -->
+                <div class="col-md-3">
+                    <div class="footer-widget">
+                        <h3 class="widget-title">邮箱地址</h3>
+                        1585084146@qq.com
+                        <br>1264160868@qq.com
+                        <br>1228974364@qq.com
+
+                    </div> <!-- /.footer-widget -->
+                </div> <!-- /.col-md-3 -->
+                <div class="col-md-4">
+                    <div class="footer-widget">
+                        <img src="images/tongji.png" style="height: 150px">
+                    </div> <!-- /.footer-widget -->
+                </div> <!-- /.col-md-3 -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </div> <!-- /.main-footer -->
+
+</footer> <!-- /.site-footer -->
 
 <script src="js/vendor/jquery-1.10.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>

@@ -9,5 +9,6 @@ import java.util.List;
 public interface KeywordDao {
     Boolean InsertKeyword(String keyWord);
     Boolean CheckKeyWord(String keyWord);
+    Boolean DeleteKeyword(String keyWord);
     List<Keyword> getKeyWordAll();
 }

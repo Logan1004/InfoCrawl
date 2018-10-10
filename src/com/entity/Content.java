@@ -7,6 +7,15 @@ public class Content {
     private String Owner;
     private String Category;
     private String Detail;
+    private String Url;
+
+    public String getUrl() {
+        return Url;
+    }
+
+    public void setUrl(String url) {
+        Url = url;
+    }
 
     public String getTitle() {
         return Title;

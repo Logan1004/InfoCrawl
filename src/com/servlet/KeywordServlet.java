@@ -20,21 +20,26 @@ public class KeywordServlet extends HttpServlet{
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String keyword = request.getParameter("name");
-        KeywordDao keywordDao = new KeywordDaoImpl();
-        System.out.println("ren2");
-        if (keyword.equals(""));
-
-        else if (!keywordDao.CheckKeyWord(keyword)){
-            System.out.println("ren");
-            request.setAttribute("info", "关键词重复");
-            request.getRequestDispatcher("addkey.jsp").forward(request, response);
-        }
-        else if (keywordDao.InsertKeyword(keyword)){
-            request.setAttribute("info", "添加成功");
-            request.getRequestDispatcher("addkey.jsp").forward(request, response);
+        if (request.getParameter("name") != null) {
+            String keyword = request.getParameter("name");
+            KeywordDao keywordDao = new KeywordDaoImpl();
+            System.out.println("ren2");
+            if (keyword.equals("")) {
+                request.setAttribute("info", "关键词不能为空");
+                request.getRequestDispatcher("addkey.jsp").forward(request, response);
+            } else if (!keywordDao.CheckKeyWord(keyword)) {
+                System.out.println("ren");
+                request.setAttribute("info", "关键词重复");
+                request.getRequestDispatcher("addkey.jsp").forward(request, response);
+            } else if (keywordDao.InsertKeyword(keyword)) {
+                request.setAttribute("info", "添加成功");
+                request.getRequestDispatcher("addkey.jsp").forward(request, response);
+            } else {
+                response.sendRedirect("index.jsp");
+            }
         }else{
-            response.sendRedirect("index.jsp");
+            request.setAttribute("info", "关键词不能为空");
+            request.getRequestDispatcher("addkey.jsp").forward(request, response);
         }
     }
 }

@@ -3,9 +3,9 @@ package com.util;
 import java.sql.*;
 
 public class DBconn {
-	static String url = "jdbc:mysql://localhost:3306/CrawlProject";
+	static String url = "jdbc:mysql://139.199.226.149:3306/CrawlProject?characterEncoding=utf8";
 	static String username = "root"; 
-	static String password = "1234";
+	static String password = "test";
 	static Connection  conn = null;
 	static ResultSet rs = null;
 	static PreparedStatement ps =null;
@@ -32,6 +32,7 @@ public class DBconn {
 	}
 	public static ResultSet selectSql(String sql){
 		try {
+			System.out.println(sql);
 			ps =  conn.prepareStatement(sql);
 			rs =  ps.executeQuery(sql);
 		} catch (SQLException e) {
